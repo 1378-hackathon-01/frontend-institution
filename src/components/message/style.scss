@@ -1,0 +1,67 @@
+.msg-A2Ehd {
+  border: 0.0625rem dashed black;
+  border-radius: 0.1875rem;
+  padding: 0.625rem;
+  font-size: 0.9rem;
+
+  >header {
+    display: flex;
+    gap: 0.1875rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.3125rem;
+
+    >svg {
+      align-self: center;
+      height: 0.75rem;
+      width: 0.75rem;
+    }
+  }
+
+  &.i-Z2as {
+    border-color: var(--color-info);
+
+    >header {
+      color: var(--color-info);
+    }
+  }
+
+  &.s-uY3sa {
+    border-color: var(--color-success);
+
+    >header {
+      color: var(--color-success);
+    }
+  }
+
+  &.w-WnSa {
+    border-color: var(--color-warning);
+
+    >header {
+      color: var(--color-warning);
+    }
+  }
+
+  &.e-Bh374 {
+    border-color: var(--color-error);
+
+    >header {
+      color: var(--color-error);
+    }
+  }
+
+  &.a-01-i648 {
+    border-color: var(--color-accent-01);
+
+    >header {
+      color: var(--color-accent-01);
+    }
+  }
+
+  p {
+    margin: 0.3em 0;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

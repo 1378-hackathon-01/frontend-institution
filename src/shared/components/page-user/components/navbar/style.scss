@@ -1,0 +1,49 @@
+.navbar-22ln {
+  background-color: #111522;
+  padding: 0.8em 1.25em;
+  color: white;
+  border-radius: 0.375rem;
+
+  -webkit-box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+  -moz-box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+  box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+
+  &.fixed-67af {
+    position: fixed;
+    max-width: 770px;
+    margin: auto;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+
+    @media (max-width: 820px) {
+      top: 0px;
+      border-radius: 0 0 0.375rem 0.375rem;
+    }
+  }
+
+  &.hidden-iigm {
+    position: relative;
+    visibility: hidden;
+  }
+
+  a {
+    color: white;
+  }
+  
+  .abbr-3cpi {
+    user-select: none;
+  }
+
+  .navbar-link-1u7k {
+    .icon-qvre {
+      font-size: 1.5em;
+      line-height: 1em;
+    }
+    
+    .desc-jcxp {
+      font-size: 0.8em;
+      line-height: 1em;
+    }
+  }
+}

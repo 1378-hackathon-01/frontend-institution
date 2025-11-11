@@ -1,0 +1,89 @@
+.box-yHd {
+  border-radius: 0.19rem;
+
+  &.l-Nhy {
+    background-color: var(--color-background-02);
+  }
+
+  &.d-N4s {
+    background-color: var(--color-background-01);
+  }
+
+  &.lo-pnvq {
+    background: linear-gradient(130deg, var(--color-background-01), var(--color-background-01), var(--color-background-02), var(--color-background-01), var(--color-background-01));
+    background-size: 200% 200%;
+    -webkit-animation: bg-a-nzo5 5s ease infinite;
+    -moz-animation: bg-a-nzo5 5s ease infinite;
+    animation: bg-a-nzo5 5s ease infinite;
+
+    @-webkit-keyframes bg-a-nzo5 {
+      0% {
+        background-position: 10% 0%
+      }
+
+      50% {
+        background-position: 91% 100%
+      }
+
+      100% {
+        background-position: 10% 0%
+      }
+    }
+
+    @-moz-keyframes bg-a-nzo5 {
+      0% {
+        background-position: 10% 0%
+      }
+
+      50% {
+        background-position: 91% 100%
+      }
+
+      100% {
+        background-position: 10% 0%
+      }
+    }
+
+    @keyframes bg-a-nzo5 {
+      0% {
+        background-position: 10% 0%
+      }
+
+      50% {
+        background-position: 91% 100%
+      }
+
+      100% {
+        background-position: 10% 0%
+      }
+    }
+  }
+
+  &.i-5hs {
+    -webkit-box-shadow: inset 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+    -moz-box-shadow: inset 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+    box-shadow: inset 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+  }
+
+  &.o-Bzg {
+    -webkit-box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+    -moz-box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+    box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
+  }
+
+  &.p-0-3-Abd {
+    padding: 0.3rem;
+  }
+
+  &.p-0-6-Nx2 {
+    padding: 0.6rem;
+  }
+
+  &.p-1-fkF {
+    padding: 1rem;
+  }
+
+  &.p-1-25-BAg {
+    padding: 1.25rem;
+  }
+}

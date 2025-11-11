@@ -1,0 +1,131 @@
+.input-4Ys {
+  text-align: left;
+  flex: 1 1 0;
+
+  // Подпись к текстовому полю.
+  > .l-Nx18 {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1em;
+    margin-left: 0.1875rem;
+    text-align: left;
+    color: var(--color-accent-01);
+  }
+
+  // Ошибка
+  > .e-Nhs2 {
+    font-size: 0.6875rem;
+    margin-left: 0.1875rem;
+    color: var(--color-error);
+  }
+
+  &:has(.e-Nhs2) .l-Nx18 {
+    color: var(--color-error);
+  }
+
+  &:has(.e-Nhs2) > .i-box-ns4 {
+    background-color: rgba(var(--color-error-rgb), 0.1);
+
+    > .i-5Hsy {
+      outline: 2px solid var(--color-error);
+      color: var(--color-error);
+
+      &::placeholder {
+        color: rgba(var(--color-error-rgb), 0.5);
+      }
+    }
+
+    > .i-ySh1 {
+      color: black;
+    }
+  }
+
+  > .i-box-ns4 {
+    position: relative;
+    display: flex;
+
+    // Кнопка отображения пароля.
+    > .i-p-s-Bshf {
+      position: absolute;
+      right: 0.625rem;
+      font-size: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+
+      cursor: pointer;
+      user-select: none;
+
+      display: flex;
+      align-items: center;
+
+      color: var(--color-accent-01);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    // Иконка.
+    > .i-ySh1 {
+      pointer-events: none;
+      position: absolute;
+      color: var(--color-accent-01);
+      left: 0.625rem;
+      font-size: 1.125rem;
+      top: 50%;
+      transform: translateY(-50%);
+
+      display: flex;
+      align-items: center;
+    }
+
+    // Текстовое поле.
+    > .i-5Hsy {
+      margin-left: 0.0625rem;
+      margin-right: 0.0625rem;
+      flex: 1 1 0;
+      min-width: 0;
+      width: 1.75rem;
+
+      padding: 0.62rem;
+
+      border-width: 0rem;
+      background-color: transparent;
+      border-radius: 0.19rem;
+
+      font-size: 1rem;
+      font-family: 'PT Sans', Verdana, Geneva, Tahoma, sans-serif;
+      max-height: 1.1875rem;
+      
+      &[type="button"] {
+        max-height: unset;
+        text-align: left;
+      }
+
+      &:disabled {
+        opacity: 0.7;
+      }
+
+      &:focus {
+        outline: 1px solid var(--color-accent-01);
+      }
+
+      &::placeholder {
+        opacity: 0.7;
+      }
+    }
+
+    // Если есть иконка увеличиваем отступ слева
+    &:has(.i-ySh1) > .i-5Hsy {
+      padding-left: 2rem;
+    }
+
+    &:has(.i-p-s-Bshf) > .i-5Hsy {
+      padding-right: 2rem;
+
+      &::-ms-reveal {
+        display: none;
+      }
+    }
+  }
+}

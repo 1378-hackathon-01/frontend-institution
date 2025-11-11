@@ -1,0 +1,49 @@
+.load-l-Yrh {
+  &.lss-Nhr6 {
+    height: 0.28125rem;
+    width: 1.875rem;
+    background-size: 26% 0.09375rem;
+  }
+
+  &.lsd-Vfar {
+    height: 0.5625rem;
+    width: 3.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-size: 26% 0.1875rem;
+  }
+
+  &.lcr-6Q13 {
+    --c: linear-gradient(var(--color-accent-01) 0 0);
+  }
+  &.lcb-t4TY {
+    --c: linear-gradient(var(--color-accent-02) 0 0);
+  }
+  &.lcb01-75Hw {
+    --c: linear-gradient(var(--color-background-01) 0 0);
+  }
+  &.lcb02-6U3H {
+    --c: linear-gradient(var(--color-background-02) 0 0);
+  }
+
+  background: var(--c), var(--c), var(--c), var(--c);
+  background-repeat: no-repeat;
+  animation: t6 1s infinite;
+}
+
+@keyframes t6 {
+  0%,
+  70%,
+  100% {
+    background-position: calc(0 * 100% / 3) 50%, calc(1 * 100% / 3) 50%, calc(2 * 100% / 3) 50%, calc(3 * 100% / 3) 50%;
+  }
+  23.33% {
+    background-position: calc(0 * 100% / 3) 0, calc(1 * 100% / 3) 100%, calc(2 * 100% / 3) 0, calc(3 * 100% / 3) 100%;
+  }
+  46.67% {
+    background-position: calc(1 * 100% / 3) 0, calc(0 * 100% / 3) 100%, calc(3 * 100% / 3) 0, calc(2 * 100% / 3) 100%;
+  }
+  69.99% {
+    background-position: calc(1 * 100% / 3) 50%, calc(0 * 100% / 3) 50%, calc(3 * 100% / 3) 50%, calc(2 * 100% / 3) 50%;
+  }
+}

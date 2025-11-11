@@ -1,0 +1,34 @@
+h1.h-7y,
+h2.h-7y,
+h3.h-7y,
+h4.h-7y,
+h5.h-7y,
+h6.h-7y,
+div.h-7y,
+span.h-7y {
+  font-weight: 700;
+  margin: 0rem;
+
+  &.h-a-l {
+    text-align: left;
+  }
+  &.h-a-c {
+    text-align: center;
+  }
+  &.h-a-r {
+    text-align: right;
+  }
+
+  &.h-f-1 {
+    font-size: 1rem;
+  }
+  &.h-f-1-25 {
+    font-size: 1.25rem;
+  }
+  &.h-f-1-5 {
+    font-size: 1.5rem;
+  }
+  &.h-f-i {
+    font-size: inherit;
+  }
+}

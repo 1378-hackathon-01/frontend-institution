@@ -1,0 +1,26 @@
+.m-cnt-U5yq {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: calc(56rem - 1px)) {
+    flex-grow: 1;
+    align-self: stretch;
+  }
+
+  @media (min-width: 56rem) {
+    align-self: flex-start;
+    margin-top: 10vh;
+
+    &.m-f-4qa3 {
+      flex-grow: 1;
+      align-self: stretch;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    &.m-400-U5us {
+      flex-basis: 25rem;
+    }
+  }
+}

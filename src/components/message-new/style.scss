@@ -1,0 +1,48 @@
+.msg-nzf6 {
+  border-radius: 0.375rem;
+  padding: 0.625rem;
+  font-size: 0.9em;
+
+  &.msg-i-6gp {
+    background: linear-gradient(60deg, rgba(var(--color-info-rgb), 0.17), rgba(var(--color-info-rgb), 0.1));
+
+    .title-asxg {
+      color: var(--color-info);
+    }
+  }
+
+  &.msg-w-efj {
+    background: linear-gradient(60deg, rgba(var(--color-warning-rgb), 0.17), rgba(var(--color-warning-rgb), 0.1));
+
+    .title-asxg {
+      color: var(--color-warning);
+    }
+  }
+
+  &.msg-e-w1m {
+    background: linear-gradient(60deg, rgba(var(--color-error-rgb), 0.12), rgba(var(--color-error-rgb), 0.08));
+
+    .title-asxg {
+      color: var(--color-error);
+    }
+  }
+
+  &.msg-s-rjgm {
+    background: linear-gradient(60deg, rgba(var(--color-success-rgb), 0.12), rgba(var(--color-success-rgb), 0.08));
+
+    .title-asxg {
+      color: var(--color-success);
+    }
+  }
+
+  .title-asxg {
+    font-weight: bold;
+
+    svg {
+      margin-right: 0.3125em;
+      margin-bottom: -0.1em;
+      height: 0.8em;
+      width: 0.8em;
+    }
+  }
+}

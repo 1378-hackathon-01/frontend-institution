@@ -1,0 +1,56 @@
+.tip-YwyH {
+  position: relative;
+  font-size: 1em;
+  line-height: 1em;
+  height: 1em;
+
+  .content-XdGn {
+    visibility: hidden;
+
+    position: absolute;
+    width: 20rem;
+    font-size: max(0.8em, 0.8rem);
+
+    background-color: var(--color-tooltip-background);
+    padding: 0.6rem;
+    border-radius: 6px;
+
+    top: 50%;
+    left: calc(1.5em);
+    transform: translateY(-50%);
+
+    z-index: 15;
+
+    user-select: none;
+    pointer-events: none;
+
+    -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .icon-23Sk {
+    cursor: pointer;
+    color: var(--color-accent-02);
+    background-color: transparent;
+    transition: opacity 0.1s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .icon-23Sk:has(:hover) + .content-XdGn {
+    animation: 0.3s fade-in-ZX6X;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fade-in-ZX6X {
+    99% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+}

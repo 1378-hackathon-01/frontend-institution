@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { RecoilRoot } from 'recoil';
 import { RoutingUrls } from 'common/const';
-import { PageAuth, PageError, PageFaculties, PageFaculty, PageMain } from 'pages';
+import { PageAuth, PageError, PageFaculties, PageFaculty, PageGroup, PageMain } from 'pages';
 import './index.scss';
 
 const router = createBrowserRouter([
@@ -25,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: RoutingUrls.Faculty,
     element: <PageFaculty />,
+  },
+  {
+    path: RoutingUrls.Group,
+    element: <PageGroup />,
   },
 ]);
 

@@ -4,4 +4,5 @@ export enum RoutingUrls {
   Error = '/error',
   Faculties = '/faculties',
   Faculty = '/faculties/:facultyId',
+  Group = '/faculties/:facultyId/groups/:groupId',
 }

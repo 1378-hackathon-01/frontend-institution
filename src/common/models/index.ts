@@ -6,4 +6,7 @@ export type { default as IInstitutionFacultyBrief } from './i-institution-facult
 export type { default as IInstitutionFacultyFull } from './i-institution-faculty-full';
 export type { default as IInstitutionFacultyPost } from './i-institution-faculty-post';
 
+export type { default as IInstitutionGroupBrief } from './i-institution-group-brief';
+export type { default as IInstitutionGroupPost } from './i-institution-group-post';
+
 export type { default as IInstitutionAuthBrief } from './i-institution-auth-brief';

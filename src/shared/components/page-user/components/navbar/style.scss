@@ -8,6 +8,8 @@
   -moz-box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
   box-shadow: 0.06rem 0.06rem 0.125rem 0.06rem rgba(57, 58, 66, 0.25);
 
+  z-index: 10;
+
   &.fixed-67af {
     position: fixed;
     max-width: 770px;

@@ -9,4 +9,7 @@ export type { default as IInstitutionFacultyPost } from './i-institution-faculty
 export type { default as IInstitutionGroupBrief } from './i-institution-group-brief';
 export type { default as IInstitutionGroupPost } from './i-institution-group-post';
 
+export type { default as IInstitutionStudentApproveFull } from './i-institution-student-approve-full';
+export type { default as IInstitutionStudentRequestFull } from './i-institution-student-request-full';
+
 export type { default as IInstitutionAuthBrief } from './i-institution-auth-brief';

@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { Button, Flex, Input, Loader, Message, Modal } from 'components';
 import { handleError, handleErrorAuth } from 'common/handlers';
-import { ApiFaculties } from 'common/api';
+import { ApiGroups } from 'common/api';
 
 type Stage = 'default' | 'loading' | 'success';
 
 interface IProps {
+  facultyId: string;
   onClose: () => void;
 }
 
-function ModalAddFaculty(props: IProps) {
+function ModalCreateGroup(props: IProps) {
   const [stage, setStage] = useState<Stage>('default');
   const [title, setTitle] = useState<string>('');
   const [abbreviation, setAbbreviation] = useState<string>('');
@@ -22,7 +23,7 @@ function ModalAddFaculty(props: IProps) {
         await handleErrorAuth(async () => {
           setStage('loading');
 
-          await ApiFaculties.getInstance().create({
+          await ApiGroups.getInstance().create(props.facultyId, {
             title: title.trim(),
             abbreviation: abbreviation.trim(),
           });
@@ -35,7 +36,7 @@ function ModalAddFaculty(props: IProps) {
     <Modal
       size={400}
       onClose={stage !== 'loading' ? props.onClose : undefined}
-      header='Добавление факультета'
+      header='Добавление группы'
     >
       {stage === 'success' && (
         <Flex
@@ -44,9 +45,9 @@ function ModalAddFaculty(props: IProps) {
         >
           <Message
             type='success'
-            title='Факультет успешно добавлен'
+            title='Группа успешно добавлена'
           >
-            <p>Вы успешно добавили факультет в сервис!</p>
+            <p>Вы успешно добавили группу в сервис!</p>
           </Message>
 
           <Button onClick={props.onClose}>Закрыть</Button>
@@ -77,7 +78,7 @@ function ModalAddFaculty(props: IProps) {
             <Input
               type='text'
               label='Аббревиатура'
-              placeholder='ФКТИ'
+              placeholder='ВМК-20'
               value={abbreviation}
               onInput={setAbbreviation}
             />
@@ -85,7 +86,7 @@ function ModalAddFaculty(props: IProps) {
             <Input
               type='text'
               label='Полное название'
-              placeholder='Факультет компьютерных технологий и информатики'
+              placeholder='Вычислительно-машинный комплекс 2020'
               value={title}
               onInput={setTitle}
             />
@@ -109,4 +110,4 @@ function ModalAddFaculty(props: IProps) {
   );
 }
 
-export default ModalAddFaculty;
+export default ModalCreateGroup;

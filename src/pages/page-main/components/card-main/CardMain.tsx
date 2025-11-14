@@ -35,6 +35,11 @@ function CardMain() {
             href={RoutingUrls.Faculties}
             label='Управление факультетами'
           />
+          <CardLink
+            icon={<bi.Calendar3 />}
+            href={RoutingUrls.Schedule}
+            label='Расписание'
+          />
         </Flex>
       </Flex>
     </Box>

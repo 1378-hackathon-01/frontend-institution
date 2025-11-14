@@ -30,7 +30,7 @@ export abstract class BaseApiClient {
 
   /** Адрес должен начинаться с «/» */
   private createApiAddress(endpoint: string): string {
-    const address = process.env.NODE_ENV === 'development' ? API_DEVELOP : API_PRODUCT;
+    const address = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'development' ? API_DEVELOP : API_PRODUCT);
     return `${address}${endpoint}`;
   }
 }

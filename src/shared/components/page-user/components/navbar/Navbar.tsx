@@ -45,6 +45,11 @@ function NavbarBody(props: { hidden?: boolean; abbreviation: string }) {
           label='Факультеты'
           href={RoutingUrls.Faculties}
         />
+        <NavbarLink
+          icon={<bi.Calendar3 />}
+          label='Расписание'
+          href={RoutingUrls.Schedule}
+        />
       </Flex>
     </Flex>
   );

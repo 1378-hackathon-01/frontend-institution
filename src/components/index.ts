@@ -4,7 +4,7 @@ export { Box } from './box';
 export { Input } from './input';
 export { Header } from './header';
 export { Checkbox } from './checkbox';
-export { Modal } from './modal';
+export { Modal, ModalHeader, ModalContent } from './modal';
 export { Loader } from './loader';
 export { Scroll } from './scroll';
 export { Message as MessageOld } from './message';

@@ -1,5 +1,5 @@
+import { ApiClient } from 'common/api-lib';
 import { API_DEVELOP, API_PRODUCT } from 'common/const';
-import { ApiClient } from '@1378-hackathon-01/frontend-api-client';
 import { AuthService } from 'common/services';
 
 type RequestMethod = 'get' | 'post' | 'put' | 'delete';
@@ -30,7 +30,8 @@ export abstract class BaseApiClient {
 
   /** Адрес должен начинаться с «/» */
   private createApiAddress(endpoint: string): string {
-    const address = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'development' ? API_DEVELOP : API_PRODUCT);
+    const address =
+      process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'development' ? API_DEVELOP : API_PRODUCT);
     return `${address}${endpoint}`;
   }
 }

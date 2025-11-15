@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ApiError, ApiErrorCode } from '@1378-hackathon-01/frontend-api-client';
+import { ApiError, ApiErrorCode } from 'common/api-lib';
 import { Box, Flex, Header, Logo, Page } from 'components';
 import { handleError } from 'common/handlers';
 import { AuthService } from 'common/services';

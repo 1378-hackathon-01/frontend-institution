@@ -1,4 +1,4 @@
-import { ApiError, ApiErrorCode } from '@1378-hackathon-01/frontend-api-client';
+import { ApiError, ApiErrorCode } from 'common/api-lib';
 import { RoutingUrls } from 'common/const';
 
 const timer = (ms: number): Promise<null> => new Promise((res) => setTimeout(res, ms));

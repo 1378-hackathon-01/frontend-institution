@@ -29,12 +29,22 @@ function CardMain() {
           <p>{auth.institution.title}</p>
         </Message>
 
-        <Flex direction='column'>
+        <Flex
+          direction='column'
+          gap={5}
+        >
           <CardLink
             icon={<bi.Radar />}
             href={RoutingUrls.Faculties}
             label='Управление факультетами'
           />
+
+          <CardLink
+            icon={<bi.Leaf />}
+            href={RoutingUrls.Subjects}
+            label='Управление дисциплинами'
+          />
+
           <CardLink
             icon={<bi.Calendar3 />}
             href={RoutingUrls.Schedule}

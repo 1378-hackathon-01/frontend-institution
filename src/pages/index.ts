@@ -5,3 +5,4 @@ export { default as PageFaculties } from './page-faculties/PageFaculties';
 export { default as PageFaculty } from './page-faculty/PageFaculty';
 export { default as PageGroup } from './page-group/PageGroup';
 export { default as PageSchedule } from './page-schedule/PageSchedule';
+export { default as PageSubjects } from './page-subjects/PageSubjects';

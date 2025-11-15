@@ -2,22 +2,45 @@ import { useParams } from 'react-router';
 import { Flex, Page } from 'components';
 import { PageUser, ScrollFiller } from 'shared/components';
 import { useEffect, useState } from 'react';
-import { IInstitutionGroupBrief, IInstitutionStudentApproveFull, IInstitutionStudentRequestFull } from 'common/models';
-import { ApiGroups, ApiStudents } from 'common/api';
+import {
+  IInstitutionGroupBrief,
+  IInstitutionStudentApproveFull,
+  IInstitutionStudentRequestFull,
+  IInstitutionSubjectBrief,
+} from 'common/models';
+import { ApiGroups, ApiStudents, ApiSubjects } from 'common/api';
 import { handleError, handleErrorAuth } from 'common/handlers';
-import { CardGroup, CardStudentsApproves, CardStudentsRequests, ModalDeleteGroup } from './components';
+import {
+  CardGroup,
+  CardStudentsApproves,
+  CardStudentsRequests,
+  CardSubjects,
+  ModalDeleteGroup,
+  ModalEditSubjectContent,
+} from './components';
 
 function PageGroups() {
   const { facultyId, groupId } = useParams();
+
   const [group, setGroup] = useState<IInstitutionGroupBrief | null>();
+
   const [requests, setRequests] = useState<IInstitutionStudentRequestFull[] | null>();
   const [approves, setApproved] = useState<IInstitutionStudentApproveFull[] | null>();
+
+  const [subjects, setSubjects] = useState<IInstitutionSubjectBrief[] | null>();
+  const [groupSubjects, setGroupSubjects] = useState<IInstitutionSubjectBrief[] | null>();
+
   const [modalDeleteGroup, setModalDeleteGroup] = useState<boolean>(false);
+  const [modalEditSubject, setModalEditSubject] = useState<IInstitutionSubjectBrief | null>(null);
 
   useEffect(() => {
     loadGroup();
+
     loadRequests();
     loadApproved();
+
+    loadSubjects();
+    loadGroupSubjects();
   }, []);
 
   const loadGroup = async () =>
@@ -59,6 +82,34 @@ function PageGroups() {
           const approved = await ApiStudents.getInstance().getApproved(facultyId, groupId);
 
           setApproved(approved);
+        })
+    );
+
+  const loadSubjects = async () =>
+    await handleError(
+      async () =>
+        await handleErrorAuth(async () => {
+          if (facultyId == null || groupId == null) {
+            throw new Error();
+          }
+
+          const subjects = await ApiSubjects.getInstance().getAll();
+
+          setSubjects(subjects);
+        })
+    );
+
+  const loadGroupSubjects = async () =>
+    await handleError(
+      async () =>
+        await handleErrorAuth(async () => {
+          if (facultyId == null || groupId == null) {
+            throw new Error();
+          }
+
+          const subjects = await ApiSubjects.getInstance().getGroupAll(facultyId, groupId);
+
+          setGroupSubjects(subjects);
         })
     );
 
@@ -119,6 +170,44 @@ function PageGroups() {
     loadApproved();
   };
 
+  const handleSubjectAddClick = async (subject: IInstitutionSubjectBrief) => {
+    setSubjects(null);
+    setGroupSubjects(null);
+
+    await handleError(
+      async () =>
+        await handleErrorAuth(async () => {
+          if (facultyId == null || groupId == null) {
+            throw new Error();
+          }
+
+          await ApiSubjects.getInstance().groupAdd(facultyId, groupId, subject.id);
+        })
+    );
+
+    loadSubjects();
+    loadGroupSubjects();
+  };
+
+  const handleSubjectRemoveClick = async (subject: IInstitutionSubjectBrief) => {
+    setSubjects(null);
+    setGroupSubjects(null);
+
+    await handleError(
+      async () =>
+        await handleErrorAuth(async () => {
+          if (facultyId == null || groupId == null) {
+            throw new Error();
+          }
+
+          await ApiSubjects.getInstance().groupRemove(facultyId, groupId, subject.id);
+        })
+    );
+
+    loadSubjects();
+    loadGroupSubjects();
+  };
+
   return (
     <Page title='Группа'>
       {modalDeleteGroup && (
@@ -129,6 +218,15 @@ function PageGroups() {
         />
       )}
 
+      {modalEditSubject && (
+        <ModalEditSubjectContent
+          groupId={groupId ?? ''}
+          facultyId={facultyId ?? ''}
+          subject={modalEditSubject}
+          onClose={() => setModalEditSubject(null)}
+        />
+      )}
+
       <PageUser>
         <Flex
           direction='column'
@@ -136,6 +234,7 @@ function PageGroups() {
         >
           {group != null && (
             <CardGroup
+              facultyId={facultyId ?? ''}
               group={group}
               onDeleteClick={() => setModalDeleteGroup(true)}
             />
@@ -151,6 +250,16 @@ function PageGroups() {
             <CardStudentsApproves
               students={approves}
               onDeleteClick={handleApprovedDeleteClick}
+            />
+          )}
+
+          {subjects != null && groupSubjects != null && (
+            <CardSubjects
+              subjects={subjects}
+              groupSubjects={groupSubjects}
+              onAddClick={handleSubjectAddClick}
+              onEditClick={setModalEditSubject}
+              onRemoveClick={handleSubjectRemoveClick}
             />
           )}
           <ScrollFiller />

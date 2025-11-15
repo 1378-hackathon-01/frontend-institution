@@ -12,4 +12,10 @@ export type { default as IInstitutionGroupPost } from './i-institution-group-pos
 export type { default as IInstitutionStudentApproveFull } from './i-institution-student-approve-full';
 export type { default as IInstitutionStudentRequestFull } from './i-institution-student-request-full';
 
+export type { default as IInstitutionSubjectBrief } from './i-institution-subject-brief';
+export type { default as IInstitutionSubjectPost } from './i-institution-subject-post';
+
+export type { default as IInstitutionGroupSubjectFull } from './i-institution-group-subject-full';
+export type { default as IInstitutionGroupSubjectPatch } from './i-institution-group-subject-patch';
+
 export type { default as IInstitutionAuthBrief } from './i-institution-auth-brief';

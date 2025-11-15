@@ -1,8 +1,8 @@
 import { IInstitutionGroupBrief } from 'common/models';
 import { Box, Button, Flex, Header } from 'components';
-import { useState } from 'react';
 
 interface IProps {
+  facultyId: string;
   group: IInstitutionGroupBrief;
   onDeleteClick: () => void;
 }
@@ -20,8 +20,8 @@ function CardGroup(props: IProps) {
           <b>{props.group.abbreviation}</b> — {props.group.title}
         </div>
 
-        <Flex justifyContent='flex-end'>
-          <Button onClick={props.onDeleteClick}>Удалить</Button>
+        <Flex>
+          <Button onClick={props.onDeleteClick}>Удалить группу</Button>
         </Flex>
       </Flex>
     </Box>

@@ -14,7 +14,7 @@ function CardStudentsRequests(props: IProps) {
         direction='column'
         gap={20}
       >
-        <Header>Список заявок</Header>
+        <Header>Ожидающие заявки</Header>
 
         {props.students.length === 0 && (
           <Message

@@ -9,6 +9,7 @@ import {
   PageFaculty,
   PageGroup,
   PageMain,
+  PageProfile,
   PageSchedule,
   PageSubjects,
 } from 'pages';
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: RoutingUrls.Subjects,
     element: <PageSubjects />,
+  },
+  {
+    path: RoutingUrls.Profile,
+    element: <PageProfile />,
   },
 ]);
 

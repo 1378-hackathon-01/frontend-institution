@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Page, Flex, Box, Header, Input, Button } from 'components';
+import { Page, Flex, Box, Header, Input, Button, Message } from 'components';
 import { PageUser, ScrollFiller } from 'shared/components';
 import { WeekType } from 'common/const/schedule';
 import { IScheduleLesson } from 'common/models/i-schedule-lesson';
@@ -93,11 +93,7 @@ function PageSchedule() {
     if (modalData?.lesson) {
       // Редактирование существующего занятия
       setLessons((prev) =>
-        prev.map((lesson) =>
-          lesson.id === modalData.lesson!.id
-            ? { ...lesson, ...lessonData }
-            : lesson
-        )
+        prev.map((lesson) => (lesson.id === modalData.lesson!.id ? { ...lesson, ...lessonData } : lesson))
       );
     } else {
       // Создание нового занятия
@@ -117,9 +113,7 @@ function PageSchedule() {
   const handleMoveLesson = (lessonId: string, newDayOfWeek: number, newSlotNumber: number) => {
     setLessons((prev) =>
       prev.map((lesson) =>
-        lesson.id === lessonId
-          ? { ...lesson, dayOfWeek: newDayOfWeek, slotNumber: newSlotNumber }
-          : lesson
+        lesson.id === lessonId ? { ...lesson, dayOfWeek: newDayOfWeek, slotNumber: newSlotNumber } : lesson
       )
     );
   };
@@ -132,20 +126,46 @@ function PageSchedule() {
       academicYearEnd,
       lessons,
     });
-    alert('Расписание сохранено (mock)');
+    alert('Расписание сохранено');
   };
 
   return (
     <Page title='Редактор расписаний'>
       <PageUser>
-        <Flex direction='column' gap={20}>
-          <Box padding={20} className='schedule-header-x5j8'>
-            <Flex direction='column' gap={20}>
-              <Header element='h1' size='bigger'>
+        <Flex
+          direction='column'
+          gap={20}
+        >
+          <Box
+            padding={20}
+            className='schedule-header-x5j8'
+          >
+            <Flex
+              direction='column'
+              gap={20}
+            >
+              <Header
+                element='h1'
+                size='bigger'
+              >
                 Редактор расписаний
               </Header>
 
-              <Flex gap={20} alignItems='flex-end'>
+              <Message
+                type='warning'
+                title='Функционал ограничен'
+              >
+                <p>Ограниченное время разработки веб-платформы не позволило довести до конца расписание занятие.</p>
+                <p>
+                  В данной версии платформы, вы можете оценить визуал и удобство работы с расписанием, но не изменить
+                  его фактические данные.
+                </p>
+              </Message>
+
+              <Flex
+                gap={20}
+                alignItems='flex-end'
+              >
                 <Input
                   type='date'
                   label='Начало учебного года:'
@@ -177,9 +197,18 @@ function PageSchedule() {
 
           {selectedGroupId && (
             <Box padding={20}>
-              <Flex direction='column' gap={20}>
-                <Flex justifyContent='space-between' alignItems='center'>
-                  <WeekToggle weekType={weekType} onWeekTypeChange={setWeekType} />
+              <Flex
+                direction='column'
+                gap={20}
+              >
+                <Flex
+                  justifyContent='space-between'
+                  alignItems='center'
+                >
+                  <WeekToggle
+                    weekType={weekType}
+                    onWeekTypeChange={setWeekType}
+                  />
                   <Button onClick={handleSave}>Сохранить</Button>
                 </Flex>
                 <ScheduleGrid

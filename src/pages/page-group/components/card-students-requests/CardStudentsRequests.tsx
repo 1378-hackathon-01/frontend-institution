@@ -9,69 +9,66 @@ interface IProps {
 
 function CardStudentsRequests(props: IProps) {
   return (
-    <Box padding={20}>
-      <Flex
-        direction='column'
-        gap={20}
-      >
-        <Header>Ожидающие заявки</Header>
+    <Flex
+      direction='column'
+      gap={20}
+    >
+      <Header>Ожидающие заявки на присоединение к группе</Header>
 
-        {props.students.length === 0 && (
-          <Message
-            type='success'
-            title='Заявок нет'
-          >
-            <p>Нет заявок на присоединение к группе!</p>
-          </Message>
-        )}
+      {props.students.length === 0 && (
+        <Message
+          type='success'
+          title='Заявок нет'
+        >
+          <p>Нет заявок на присоединение к группе!</p>
+        </Message>
+      )}
 
-        {props.students.length > 0 && (
-          <Flex
-            direction='column'
-            gap={5}
-          >
-            {props.students.map((x) => (
-              <Box
-                key={x.id}
-                shadow='inside'
-                padding={10}
-                variant='darker'
+      {props.students.length > 0 && (
+        <Flex
+          direction='column'
+          gap={5}
+        >
+          {props.students.map((x) => (
+            <Box
+              key={x.id}
+              shadow='inside'
+              padding={10}
+              variant='darker'
+            >
+              <Flex
+                direction='column'
+                gap={10}
               >
-                <Flex
-                  direction='column'
-                  gap={10}
-                >
-                  <div>
-                    {x.fullName != null && <span>{x.fullName}</span>}{' '}
-                    {x.fullName == null && <i>Имя не установлено...</i>}
-                  </div>
+                <div>
+                  {x.fullName != null && <span>{x.fullName}</span>} {x.fullName == null && <i>Имя не установлено...</i>}
+                </div>
 
-                  <Flex
-                    justifyContent='flex-end'
-                    gap={5}
+                <Flex
+                  justifyContent='flex-end'
+                  gap={5}
+                >
+                  <Button
+                    onClick={() => props.onDeclineClick(x)}
+                    fontSize={0.9}
+                    padding={5}
                   >
-                    <Button
-                      onClick={() => props.onDeclineClick(x)}
-                      fontSize={0.9}
-                      padding={5}
-                    >
-                      Отклонить
-                    </Button>
-                    <Button
-                      onClick={() => props.onApproveClick(x)}
-                      fontSize={0.9}
-                      padding={5}
-                    >
-                      Одобрить
-                    </Button>
-                  </Flex>
+                    Отклонить
+                  </Button>
+                  <Button
+                    onClick={() => props.onApproveClick(x)}
+                    fontSize={0.9}
+                    padding={5}
+                  >
+                    Одобрить
+                  </Button>
                 </Flex>
-              </Box>
-            ))}
-          </Flex>
-        )}
-      </Flex>
-    </Box>
+              </Flex>
+            </Box>
+          ))}
+        </Flex>
+      )}
+    </Flex>
   );
 }
 

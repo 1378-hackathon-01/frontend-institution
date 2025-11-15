@@ -7,4 +7,5 @@ export enum RoutingUrls {
   Faculty = '/faculties/:facultyId',
   Group = '/faculties/:facultyId/groups/:groupId',
   Schedule = '/schedule',
+  Profile = '/profile',
 }

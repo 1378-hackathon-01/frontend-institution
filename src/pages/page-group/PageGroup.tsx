@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import { Flex, Page } from 'components';
+import { Box, Flex, Page } from 'components';
 import { PageUser, ScrollFiller } from 'shared/components';
 import { useEffect, useState } from 'react';
 import {
@@ -239,19 +239,28 @@ function PageGroups() {
               onDeleteClick={() => setModalDeleteGroup(true)}
             />
           )}
-          {requests != null && (
-            <CardStudentsRequests
-              students={requests}
-              onApproveClick={handleRequestApproveClick}
-              onDeclineClick={handleRequestDeclineClick}
-            />
-          )}
-          {approves != null && (
-            <CardStudentsApproves
-              students={approves}
-              onDeleteClick={handleApprovedDeleteClick}
-            />
-          )}
+
+          <Box padding={20}>
+            <Flex
+              direction='column'
+              gap={20}
+            >
+              {requests != null && (
+                <CardStudentsRequests
+                  students={requests}
+                  onApproveClick={handleRequestApproveClick}
+                  onDeclineClick={handleRequestDeclineClick}
+                />
+              )}
+
+              {approves != null && approves.length > 0 && (
+                <CardStudentsApproves
+                  students={approves}
+                  onDeleteClick={handleApprovedDeleteClick}
+                />
+              )}
+            </Flex>
+          </Box>
 
           {subjects != null && groupSubjects != null && (
             <CardSubjects

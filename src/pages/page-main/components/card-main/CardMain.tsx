@@ -24,9 +24,15 @@ function CardMain() {
           type='info'
           title='Подсказка'
         >
-          <p>Вы находитесь в панели управления учебного заведения {auth.institution.abbreviation}!</p>
+          <p>
+            Вы находитесь в панели управления учебного заведения <b>«{auth.institution.abbreviation}»</b>{' '}
+            <i>({auth.institution.title})</i>!
+          </p>
 
-          <p>{auth.institution.title}</p>
+          <p>
+            Здесь вы можете управлять факультетами, учебными дисциплинами и группами учебного заведения, одобрять или
+            отклонять доступ рядовых пользователей к ним.
+          </p>
         </Message>
 
         <Flex
@@ -36,21 +42,27 @@ function CardMain() {
           <CardLink
             icon={<bi.Radar />}
             href={RoutingUrls.Faculties}
-            label='Управление факультетами'
+            label='Факультеты и группы'
           />
 
           <CardLink
             icon={<bi.Leaf />}
             href={RoutingUrls.Subjects}
-            label='Управление дисциплинами'
+            label='Управление учебными дисциплинами'
           />
 
           <CardLink
             icon={<bi.Calendar3 />}
             href={RoutingUrls.Schedule}
-            label='Расписание'
+            label='Расписание занятий'
           />
         </Flex>
+
+        <CardLink
+          icon={<bi.Person />}
+          href={RoutingUrls.Profile}
+          label='Управление профилем'
+        />
       </Flex>
     </Box>
   );
